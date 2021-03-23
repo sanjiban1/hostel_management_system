@@ -1,0 +1,2 @@
+# hostel_management_system
+Hostel Management System" this is the best way to apply for the outpass to go outside from the  campus. In this application student can easily apply outpass at any time and in parallel warden is  also having a different login credentials and dashboard to accept or reject the outpass. Once the  warden accepts the outpass the student will get a QR-Code which he can show on the gate to scan.  On scanning the QR-Code the guard will get all the information about the student. While on reject  outpass the student will not get any QR-Code. 
