@@ -1,0 +1,500 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+						pagesummary: {
+		fillColor: '#ffffbb',
+	},
+	globalsummary: {
+		fillColor: '#ffe0b0',
+	},
+			group_1: {
+			fillColor: '#90EE90'
+		},
+		nbgroup_1: {
+			fillColor: '#90EE90'
+		},
+		header_1: {
+			fillColor: '#7ACA7A',
+			fontSize: 15,
+			bold: true
+		},
+			group_2: {
+			fillColor: '#ADD8E6'
+		},
+		nbgroup_2: {
+			fillColor: '#ADD8E6'
+		},
+		header_2: {
+			fillColor: '#93B7C3',
+			fontSize: 15,
+			bold: true
+		},
+			group_3: {
+			fillColor: '#FFB6C1'
+		},
+		nbgroup_3: {
+			fillColor: '#FFB6C1'
+		},
+		header_3: {
+			fillColor: '#D89AA4',
+			fontSize: 15,
+			bold: true
+		},
+		
+	blackshade: {
+		fontSize: 15,
+	},
+	summarycell: {
+		border:[false, true, false, true ]
+	},
+/*
+		.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+	*/	
+			},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+		{BEGIN body}
+		{BEGIN embedded_grid}
+		{
+			text: '{$jscaption studentlist_Report}',
+		},
+		{END embedded_grid}
+		{ 
+			{BEGIN standalone_page}
+			pageBreak: 'before',
+			{END standalone_page}
+			{BEGIN embedded_grid}
+			embeddedPage: true,
+			{END embedded_grid}
+			layout: {
+				hLineWidth: function(i, node) { return 0.1; },
+				vLineWidth: function(i, node) { 
+					if( node.table.embeddedPage ) {
+						return (i === 0 || i === node.table.widths.length) ? 0.1 : 0;
+					} else  {
+						return 0.1; 
+					}
+				},
+				hLineColor: function(i, node) { return 'gray'; },
+				vLineColor: function(i, node) { return 'gray'; },
+			},
+			table: {
+				{BEGIN embedded_grid}
+				embeddedPage: true,
+				{END embedded_grid}
+				
+				tableForm: true,
+				headerRows: 0 + 1 {BEGIN embedded_grid} -1 {END embedded_grid} ,
+
+				widths: [
+														"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+															],
+							
+				body: [
+				{BEGIN standalone_page}
+					[
+						{
+							colSpan: 9,
+							border:[false, false,false,false],
+							stack: [
+
+																										
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"","hidden":"{$item_hide_print_pdf}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+          "alignment": 'left',
+  },
+
+											],
+								[
+												{
+	cellId: 'c2',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"stack": [
+		
+				
+			{"text":"{$jspagetitlelabel studentlist_Report rprint}","hidden":"{$item_hide_print_header}","fontSize":30},
+				
+				
+			{"text":"{$printtabheader_text}","hidden":"{$item_hide_print_subheader}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+          "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+								
+																										
+{
+	table: {
+	
+				
+		location: 'above-grid',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"Page %current% of %total%","hidden":"{$item_hide_print_pages}","isHtml":true,"page_indicator":true},
+				
+		  ],
+  "border": [ false, false, false, false ],
+          "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+															]
+						},
+					],
+				{END standalone_page}
+
+																
+
+
+{BEGIN grid_row}
+	{BEGIN id_newgroup}
+		[
+								{
+				text: '{$jslabel studentlist_Report id }',
+				style: "blackshade",
+				alignment: '{$id_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report sem }',
+				style: "blackshade",
+				alignment: '{$sem_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report usn }',
+				style: "blackshade",
+				alignment: '{$usn_align}',
+			},
+																																			
+																							{
+				text: '{$jslabel studentlist_Report first_name }',
+				style: "blackshade",
+				alignment: '{$first_name_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report last_name }',
+				style: "blackshade",
+				alignment: '{$last_name_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report email }',
+				style: "blackshade",
+				alignment: '{$email_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report mob }',
+				style: "blackshade",
+				alignment: '{$mob_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report hostel_type }',
+				style: "blackshade",
+				alignment: '{$hostel_type_align}',
+			},
+											{
+				text: '{$jslabel studentlist_Report hostel_name }',
+				style: "blackshade",
+				alignment: '{$hostel_name_align}',
+			},
+						],
+	
+	[
+													{
+					colSpan: 9,
+					text: {$id_grval},
+					style: "header_1"
+				},
+																				],
+	{END id_newgroup}
+	{BEGIN sem_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+																{
+					colSpan: 8,
+					text: {$sem_grval},
+					style: "header_2"
+				},
+															],
+	{END sem_newgroup}
+	{BEGIN usn_newgroup}
+	
+	[
+									{
+					text: '',
+					style: "group_1"
+				},
+												{
+					text: '',
+					style: "group_2"
+				},
+																{
+					colSpan: 7,
+					text: {$usn_grval},
+					style:"header_3"
+				},
+										],
+	{END usn_newgroup}
+
+	{BEGIN row_data}
+	[
+			{
+			text: [
+									''
+							],
+			style: "group_1"
+		},
+			{
+			text: [
+									{$sem_value}
+							],
+			style: "group_2"
+		},
+			{
+			text: [
+									''
+							],
+			style: "group_3"
+		},
+															{
+			text: {$first_name_value},
+			alignment: '{$first_name_align}',
+		},
+							{
+			text: {$last_name_value},
+			alignment: '{$last_name_align}',
+		},
+							{
+			text: {$email_value},
+			alignment: '{$email_align}',
+		},
+							{
+			text: {$mob_value},
+			alignment: '{$mob_align}',
+		},
+							{
+			text: {$hostel_type_value},
+			alignment: '{$hostel_type_align}',
+		},
+							{
+			text: {$hostel_name_value},
+			alignment: '{$hostel_name_align}',
+		},
+				],
+	{END row_data}
+
+
+		{BEGIN usn_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+						{
+				text: "",
+				style: "group_2"
+			},
+					
+																		{
+				colSpan: 7,
+				text: [
+					'Summary for {$jslabel studentlist_Report usn } ', 
+					{$usn_grval},
+					' - ', 
+					{$groupusn_total_cnt}, 
+					' records total'
+				],
+				style: 'group_3',
+			},
+																																				],
+	
+	
+	
+	
+	
+	{END usn_endgroup}
+			{BEGIN sem_endgroup}
+
+		[
+								{
+				text: "",
+				style: "group_1"
+			},
+					
+													{
+				colSpan: 8,
+				text: [
+					'Summary for {$jslabel studentlist_Report sem } ', 
+					{$sem_grval},
+					' - ', 
+					{$groupsem_total_cnt}, 
+					' records total'
+				],
+				style: 'group_2',
+			},
+																																									],
+	
+	
+	
+	
+	
+	{END sem_endgroup}
+			{BEGIN id_endgroup}
+
+		[
+		
+								{
+				colSpan: 9,
+				text: [
+					'Summary for {$jslabel studentlist_Report id } ', 
+					{$id_grval},
+					' - ', 
+					{$groupid_total_cnt}, 
+					' records total'
+				],
+				style: 'group_1',
+			},
+																																														],
+	
+	
+	
+	
+	
+	{END id_endgroup}
+	
+{END grid_row}
+
+
+
+
+
+
+
+	[
+		{	
+			text: 'Page summary {$page_total_cnt} - records total',
+			colSpan: 9,
+			style: 'pagesummary',
+		}
+	],
+
+	
+	
+	
+	
+
+
+									]
+			
+			}
+		},
+		{END body}
+	]
+}
